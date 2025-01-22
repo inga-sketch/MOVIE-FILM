@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(bg.webp);
+    background-size: cover;
+    background-position: center;     
+    --size: 40vh;
+    --count: 7;
+    --top-marker: calc(var(--size)*0.04*0.75);
+    --bottom-marker: calc(var(--size)*0.96*0.75);
+}
+.movies {
+    width: var(--size);
+    height: var(--size);
+    background-color: rgba(241, 161, 2, 0.696);
+    margin-top: calc((100vh - var(--size))/2);
+    margin-left: calc(100vw/3 - var(--size)/2);
+    border-radius: 100%;
+    box-shadow: 0px 0px 4px 1px #000000;
+}
+.movies .film {
+   /* background: #333;*/
+    height: calc(var(--size)*0.75);
+   /* position: relative;
+    z-index: -1;
+    margin-left: calc( -100vw/3 - var(--size)/2);
+    margin-right: calc( -100vw*2/3 - var(--size)/2);*/
+    
+    margin-left: calc(-100vw/3 + var(--size)/2);
+    margin-top: calc(var(--size)* 0.25 / 2);
+    position: absolute;
+   /*  left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;*/
+    overflow: hidden;
+    width: calc( var(--count)*  ((var(--size)*0.9*0.75)*4/3 + 1vw));
+    background-image: linear-gradient(transparent var(--top-marker), #1239 var(--top-marker), #1239 var(--bottom-marker), transparent var(--bottom-marker)),
+                    radial-gradient(transparent 50%, #1239 50%),
+                    radial-gradient(transparent 50%, #1239 50%);
+    background-size: cover,
+                     var(--top-marker) var(--top-marker),
+                     var(--top-marker) var(--top-marker);
+    background-repeat: repeat,
+                       repeat-x,
+                       repeat-x;
+    background-position: top left,
+                         bottom left;
+    filter: drop-shadow(5px 5px 12px black);
+}
+.movies .film img {
+     /*display: none;*/
+    /* position: relative;*/
+    height: calc(var(--size)*0.90*0.75);
+    padding-top: calc((var(--size)*0.75 - var(--size)*0.90*0.75)/2);
+    margin: 0 0.5vw;
+ }
+.movies .controls {
+    position: absolute;
+    height: calc(var(--size)*0.8);
+    width: calc(var(--size)*0.8);
+    /*top: 0;
+    bottom: 0;
+    margin: auto;*/
+    top: calc((100vh - var(--size)*0.8)/2);
+    left: calc(100vw / 3 - var(--size)*0.8/2);
+}
+.movies .controls button {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 100%;
+    color: rgb(255, 255, 255);
+    background: radial-gradient(black 15%, rgba(241, 161, 2, 0.8) 10%, rgba(241, 161, 2, 0.8)  );
+    border: 0;
+    box-shadow: inset 0px 0px 4px 0px #000000;
+}
+.movies .controls button i{
+   font-size: calc(var(--size)/3) ; 
+}
